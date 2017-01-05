@@ -21,6 +21,8 @@
 		7F00BABC1E1DD77800EF8942 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F00BAC21E1DD79500EF8942 /* clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clue.h; sourceTree = "<group>"; };
 		7F00BAC41E1DD8F300EF8942 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7F00BAC61E1DE30200EF8942 /* gles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gles.h; sourceTree = "<group>"; };
+		7F00BAC71E1DE32000EF8942 /* hooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hooks.h; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				7F00BAC21E1DD79500EF8942 /* clue.h */,
+				7F00BAC61E1DE30200EF8942 /* gles.h */,
+				7F00BAC71E1DE32000EF8942 /* hooks.h */,
 			);
 			name = clue;
 			path = ../../../h/clue;
