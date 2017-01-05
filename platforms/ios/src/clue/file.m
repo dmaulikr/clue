@@ -1,6 +1,6 @@
 #include <stddef.h>
 
-#include "clue/files.h"
+#include "clue/file.h"
 
 const char* clue_get_read_dir(void)
 {
