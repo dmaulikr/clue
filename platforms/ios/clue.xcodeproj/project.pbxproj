@@ -22,7 +22,7 @@
 		7F00BAC21E1DD79500EF8942 /* clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clue.h; sourceTree = "<group>"; };
 		7F00BAC41E1DD8F300EF8942 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7F00BAC61E1DE30200EF8942 /* gles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gles.h; sourceTree = "<group>"; };
-		7F00BAC71E1DE32000EF8942 /* hooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hooks.h; sourceTree = "<group>"; };
+		7F00BAC71E1DE32000EF8942 /* hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook.h; sourceTree = "<group>"; };
 		7F00BAC81E1DE39700EF8942 /* file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
 		7F00BAC91E1DE3C900EF8942 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
 		7F00BACB1E1DE6AA00EF8942 /* clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clue.m; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			children = (
 				7F00BAC21E1DD79500EF8942 /* clue.h */,
 				7F00BAC61E1DE30200EF8942 /* gles.h */,
-				7F00BAC71E1DE32000EF8942 /* hooks.h */,
+				7F00BAC71E1DE32000EF8942 /* hook.h */,
 				7F00BAC81E1DE39700EF8942 /* file.h */,
 				7F00BAC91E1DE3C900EF8942 /* internal.h */,
 			);
