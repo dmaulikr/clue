@@ -1,9 +1,9 @@
 #ifndef CLUE_HOOKS_H
 #define CLUE_HOOKS_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "clue/internal.h"
+
+CLUE_BEGIN_C
 
 /* Required hooks. */
 void clue_hook_setup(void);
@@ -27,8 +27,6 @@ extern clue_hook_t clue_ios_hook_memory_warning;
 #define CLUE_HOOK_INVOKE(hook, ...) do { if (clue_hook_##hook) clue_hook_##hook(__VA_ARGS__); } while (false)
 #define CLUE_HOOK_DEFINE(hook, impl) do { clue_hook_##hook = impl; } while (false)
 
-#ifdef __cplusplus
-}
-#endif
+CLUE_END_C
 
 #endif
