@@ -24,6 +24,7 @@ extern "C" void clue_hook_setup(void)
 
 extern "C" void clue_hook_loaded(void)
 {
+	CLUE_LOG(DEFAULT, "Application loaded! Example int: %i", 12345);
 }
 
 extern "C" void clue_hook_update(double deltaTime)

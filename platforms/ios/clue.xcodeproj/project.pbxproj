@@ -12,6 +12,7 @@
 		7F00BAC51E1DD8F300EF8942 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAC41E1DD8F300EF8942 /* main.cpp */; };
 		7F00BACC1E1DE6AA00EF8942 /* clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BACB1E1DE6AA00EF8942 /* clue.m */; };
 		7F00BACE1E1DE6C900EF8942 /* file.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BACD1E1DE6C900EF8942 /* file.m */; };
+		7F00BAD11E1EFE8400EF8942 /* log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAD01E1EFE8400EF8942 /* log.m */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		7F00BAC91E1DE3C900EF8942 /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
 		7F00BACB1E1DE6AA00EF8942 /* clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clue.m; sourceTree = "<group>"; };
 		7F00BACD1E1DE6C900EF8942 /* file.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = file.m; sourceTree = "<group>"; };
+		7F00BACF1E1EF76700EF8942 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		7F00BAD01E1EFE8400EF8942 /* log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = log.m; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 				7F00BAC71E1DE32000EF8942 /* hook.h */,
 				7F00BAC81E1DE39700EF8942 /* file.h */,
 				7F00BAC91E1DE3C900EF8942 /* internal.h */,
+				7F00BACF1E1EF76700EF8942 /* log.h */,
 			);
 			name = clue;
 			path = ../../../h/clue;
@@ -89,6 +93,7 @@
 			children = (
 				7F00BACB1E1DE6AA00EF8942 /* clue.m */,
 				7F00BACD1E1DE6C900EF8942 /* file.m */,
+				7F00BAD01E1EFE8400EF8942 /* log.m */,
 			);
 			path = clue;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F00BAD11E1EFE8400EF8942 /* log.m in Sources */,
 				7F00BACE1E1DE6C900EF8942 /* file.m in Sources */,
 				7F00BAC01E1DD77800EF8942 /* main.m in Sources */,
 				7F00BAC51E1DD8F300EF8942 /* main.cpp in Sources */,
