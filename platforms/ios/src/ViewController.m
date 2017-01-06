@@ -1,16 +1,16 @@
-#import <UIKit/UIKit.h>
-#import <GLKit/GLKit.h>
+#include "clue/hook.h"
+#include "clue/touch.h"
 
 #import "ViewController.h"
 
-#include "clue/hook.h"
-#include "clue/touch.h"
+#import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 
 void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, CGSize screenSize)
 {
 	CGPoint point = [touch locationInView:nil];
 		
-	dest->index = (uint8_t)index;
+	dest->index = index;
 	dest->x = point.x / screenSize.width;
 	dest->y = point.y / screenSize.height;
 	dest->force = touch.force;

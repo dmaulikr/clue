@@ -1,15 +1,15 @@
 #ifndef CLUE_TOUCH_H
 #define CLUE_TOUCH_H
 
-#include <stddef.h>
-
 #include "clue/internal.h"
+
+#include <stdlib.h>
 
 CLUE_BEGIN_C
 
 typedef struct clue_touch
 {
-	uint8_t index;
+	size_t index;
 	float x;
 	float y;
 	float force;

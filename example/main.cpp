@@ -24,7 +24,11 @@ CLUE_EXTERN void clue_hook_setup(void)
 
 CLUE_EXTERN void clue_hook_loaded(void)
 {
-	CLUE_LOG(DEFAULT, "Application loaded! Example int: %i", 12345);
+	CLUE_LOG(DEFAULT, "Application loaded!");
+	CLUE_LOG(DEFAULT, "Read dir: %s", clue_get_read_dir());
+	CLUE_LOG(DEFAULT, "User write dir: %s", clue_get_user_write_dir());
+	CLUE_LOG(DEFAULT, "App write dir: %s", clue_get_app_write_dir());
+	CLUE_LOG(DEFAULT, "Temp write dir: %s", clue_get_temp_write_dir());
 }
 
 CLUE_EXTERN void clue_hook_update(double deltaTime)
@@ -49,15 +53,15 @@ CLUE_EXTERN void clue_hook_teardown(void)
 
 CLUE_EXTERN void clue_hook_touch_down(const clue_touch_t* touch)
 {
-	CLUE_LOG(DEFAULT, "down %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
+	CLUE_LOG(DEFAULT, "down %lu (%f, %f) f %f", touch->index, touch->x, touch->y, touch->force);
 }
 
 CLUE_EXTERN void clue_hook_touch_move(const clue_touch_t* touch)
 {
-	CLUE_LOG(DEFAULT, "move %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
+	CLUE_LOG(DEFAULT, "move %lu (%f, %f) f %f", touch->index, touch->x, touch->y, touch->force);
 }
 
 CLUE_EXTERN void clue_hook_touch_up(const clue_touch_t* touch)
 {
-	CLUE_LOG(DEFAULT, "up %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
+	CLUE_LOG(DEFAULT, "up %lu (%f, %f) f %f", touch->index, touch->x, touch->y, touch->force);
 }

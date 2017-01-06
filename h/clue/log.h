@@ -1,18 +1,17 @@
 #ifndef CLUE_LOG_H
 #define CLUE_LOG_H
 
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
-
 #include "clue/internal.h"
 
-#define CLUE_LOG(channel, str, ...) do { if (CLUE_LOG_##channel) {	\
-	size_t size = snprintf(NULL, 0, str, __VA_ARGS__);				\
-	char* buffer = (char*)malloc(size + 1);								\
-	snprintf(buffer, size + 1, str, __VA_ARGS__);					\
-	clue_log(#channel, buffer);												\
-	free(buffer);													\
+#include <stdlib.h>
+#include <stdio.h>
+
+#define CLUE_LOG(channel, ...) do { if (CLUE_LOG_##channel) {	\
+	size_t size = snprintf(NULL, 0, __VA_ARGS__);				\
+	char* buffer = (char*)malloc(size + 1);						\
+	snprintf(buffer, size + 1, __VA_ARGS__);					\
+	clue_log(#channel, buffer);									\
+	free(buffer);												\
 } } while (false)
 
 #ifndef CLUE_LOG_DEFAULT

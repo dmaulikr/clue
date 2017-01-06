@@ -1,6 +1,6 @@
-#import <Foundation/NSObjCRuntime.h>
-
 #include "clue/log.h"
+
+#import <Foundation/NSObjCRuntime.h>
 
 void clue_log(const char* channel, const char* str)
 {
