@@ -73,14 +73,17 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 {
 	[super viewDidLoad];
 	
+	// Set up GLES context.
 	self.glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 	
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
-	self.glView = [[GLKView alloc] initWithFrame:screenBounds context:self.glContext];
+	// Set up GLES view.
+	self.glView = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds] context:self.glContext];
 	self.glView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+	self.glView.multipleTouchEnabled = YES;
 	self.glView.delegate = self;
 	[self.view addSubview:self.glView];
 	
+	// Set up game loop.
 	CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
 	[displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
@@ -184,9 +187,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
-
-	self.window = [[UIWindow alloc] initWithFrame:screenBounds];
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[CustomViewController alloc] init];
     [self.window makeKeyAndVisible];
 	
