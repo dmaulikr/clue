@@ -1,40 +1,40 @@
 #include "clue/clue.h"
 
-namespace {
+namespace
+{
 	float col = 0.0f;
-	
 	bool isActive = true;
 }
 
-extern "C" void example_will_become_inactive(void)
+CLUE_EXTERN void example_will_become_inactive(void)
 {
 	isActive = false;
 }
 
-extern "C" void example_will_become_active(void)
+CLUE_EXTERN void example_will_become_active(void)
 {
 	isActive = true;
 }
 
-extern "C" void clue_hook_setup(void)
+CLUE_EXTERN void clue_hook_setup(void)
 {
 	CLUE_HOOK_DEFINE(will_become_inactive, example_will_become_inactive);
 	CLUE_HOOK_DEFINE(will_become_active, example_will_become_active);
 }
 
-extern "C" void clue_hook_loaded(void)
+CLUE_EXTERN void clue_hook_loaded(void)
 {
 	CLUE_LOG(DEFAULT, "Application loaded! Example int: %i", 12345);
 }
 
-extern "C" void clue_hook_update(double deltaTime)
+CLUE_EXTERN void clue_hook_update(double deltaTime)
 {
 	float dt = (float)deltaTime;
 	col += dt;
 	if (col >= 3.0f) col = 0.0f;
 }
 
-extern "C" void clue_hook_render(void)
+CLUE_EXTERN void clue_hook_render(void)
 {
 	float r = col > 1.0f ? 1.0f : col;
 	float g = col > 2.0f ? 1.0f : col - 1.0f;
@@ -43,6 +43,21 @@ extern "C" void clue_hook_render(void)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-extern "C" void clue_hook_teardown(void)
+CLUE_EXTERN void clue_hook_teardown(void)
 {
+}
+
+CLUE_EXTERN void clue_hook_touch_down(const clue_touch_t* touch)
+{
+	CLUE_LOG(DEFAULT, "down %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
+}
+
+CLUE_EXTERN void clue_hook_touch_move(const clue_touch_t* touch)
+{
+	CLUE_LOG(DEFAULT, "move %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
+}
+
+CLUE_EXTERN void clue_hook_touch_up(const clue_touch_t* touch)
+{
+	CLUE_LOG(DEFAULT, "up %d (%f, %f) f %f", (int)touch->index, touch->x, touch->y, touch->force);
 }

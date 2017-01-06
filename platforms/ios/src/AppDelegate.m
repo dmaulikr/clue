@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
@@ -5,10 +7,23 @@
 
 #include "clue/clue.h"
 
+void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, CGSize screenSize)
+{
+	CGPoint point = [touch locationInView:nil];
+		
+	dest->index = (uint8_t)index;
+	dest->x = point.x / screenSize.width;
+	dest->y = point.y / screenSize.height;
+	dest->force = touch.force;
+	dest->maximumPossibleForce = touch.maximumPossibleForce;
+}
+
 @interface CustomViewController : UIViewController<GLKViewDelegate>
 
 @property (strong, nonatomic) EAGLContext* glContext;
 @property (strong, nonatomic) GLKView* glView;
+
+@property (strong, nonatomic) NSMutableArray* touches;
 
 - (id)init;
 
@@ -77,20 +92,90 @@
 	clue_ios_hook_memory_warning();
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
+	if (!self.touches) self.touches = [[NSMutableArray alloc] init];
+	
+	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	
+	clue_touch_t ourTouch;
+	
+	for (UITouch* touch in touches)
+	{
+		// Get persistent index of this particular touch.
+		NSUInteger index = [self.touches indexOfObject:touch];
+		
+		if (index == NSNotFound)
+		{
+			// If the touch wasn't previously recorded, find a new persistent index for it.
+			for (index = 0; index < self.touches.count; ++index)
+			{
+				if (self.touches[index] == [NSNull null]) break;
+			}
+			
+			if (index == self.touches.count)
+			{
+				[self.touches addObject:touch];
+			}
+			else
+			{
+				[self.touches setObject:touch atIndexedSubscript:index];
+			}
+		}
+		
+		clue_ios_init_touch(&ourTouch, index, touch, screenBounds.size);
+		clue_hook_touch_down(&ourTouch);
+	}
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesMoved:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
+	if (!self.touches) return;
+	
+	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	
+	clue_touch_t ourTouch;
+	
+	for (NSUInteger i = 0; i < self.touches.count; ++i)
+	{
+		// Skip empty slots.
+		if (self.touches[i] == [NSNull null]) continue;
+		
+		// Skip touches that aren't part of this event.
+		if (![touches containsObject:self.touches[i]]) continue;
+		
+		clue_ios_init_touch(&ourTouch, i, self.touches[i], screenBounds.size);
+		clue_hook_touch_move(&ourTouch);
+	}
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
+	if (!self.touches) return;
+	
+	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	
+	clue_touch_t ourTouch;
+	
+	for (NSUInteger i = 0; i < self.touches.count; ++i)
+	{
+		// Skip empty slots.
+		if (self.touches[i] == [NSNull null]) continue;
+		
+		// Skip touches that aren't part of this event.
+		if (![touches containsObject:self.touches[i]]) continue;
+		
+		clue_ios_init_touch(&ourTouch, i, self.touches[i], screenBounds.size);
+		clue_hook_touch_up(&ourTouch);
+		
+		// Now that this touch is done, remove it from our list.
+		self.touches[i] = [NSNull null];
+	}
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesCancelled:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
+	[self touchesEnded:touches withEvent:event];
 }
 
 @end
