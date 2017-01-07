@@ -14,6 +14,7 @@
 		7F00BAD11E1EFE8400EF8942 /* log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAD01E1EFE8400EF8942 /* log.m */; };
 		7F00BAD51E1FF46700EF8942 /* hook.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAD41E1FF46700EF8942 /* hook.c */; };
 		7F00BAD81E2005AB00EF8942 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAD71E2005AB00EF8942 /* ViewController.m */; };
+		7F00BEB81E21953A00EF8942 /* screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BEB71E21953A00EF8942 /* screen.m */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		7F00BAD41E1FF46700EF8942 /* hook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hook.c; sourceTree = "<group>"; };
 		7F00BAD61E20054200EF8942 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7F00BAD71E2005AB00EF8942 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7F00BEB61E21951100EF8942 /* screen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = screen.h; sourceTree = "<group>"; };
+		7F00BEB71E21953A00EF8942 /* screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = screen.m; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 				7F00BAC91E1DE3C900EF8942 /* internal.h */,
 				7F00BACF1E1EF76700EF8942 /* log.h */,
 				7F00BAD21E1F376C00EF8942 /* touch.h */,
+				7F00BEB61E21951100EF8942 /* screen.h */,
 			);
 			name = clue;
 			path = ../../../h/clue;
@@ -101,6 +105,7 @@
 			children = (
 				7F00BACD1E1DE6C900EF8942 /* file.m */,
 				7F00BAD01E1EFE8400EF8942 /* log.m */,
+				7F00BEB71E21953A00EF8942 /* screen.m */,
 			);
 			path = clue;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				7F00BAD81E2005AB00EF8942 /* ViewController.m in Sources */,
 				7F00BAD11E1EFE8400EF8942 /* log.m in Sources */,
 				7F00BACE1E1DE6C900EF8942 /* file.m in Sources */,
+				7F00BEB81E21953A00EF8942 /* screen.m in Sources */,
 				7F00BAC01E1DD77800EF8942 /* main.m in Sources */,
 				7F00BAD51E1FF46700EF8942 /* hook.c in Sources */,
 				7F00BAC51E1DD8F300EF8942 /* main.cpp in Sources */,
