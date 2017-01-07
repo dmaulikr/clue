@@ -65,7 +65,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	self.glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 	
 	// Set up GLES view.
-	self.glView = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds] context:self.glContext];
+	self.glView = [[GLKView alloc] initWithFrame:UIScreen.mainScreen.bounds context:self.glContext];
 	self.glView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
 	self.glView.multipleTouchEnabled = YES;
 	self.glView.delegate = self;
@@ -73,7 +73,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	
 	// Set up game loop.
 	CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-	[displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+	[displayLink addToRunLoop:NSRunLoop.mainRunLoop forMode:NSDefaultRunLoopMode];
 }
 
 
@@ -87,7 +87,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 {
 	if (!self.touches) self.touches = [[NSMutableArray alloc] init];
 	
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	CGRect screenBounds = UIScreen.mainScreen.bounds;
 	
 	clue_touch_t ourTouch;
 	
@@ -101,7 +101,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 			// If the touch wasn't previously recorded, find a new persistent index for it.
 			for (index = 0; index < self.touches.count; ++index)
 			{
-				if (self.touches[index] == [NSNull null]) break;
+				if (self.touches[index] == NSNull.null) break;
 			}
 			
 			if (index == self.touches.count)
@@ -123,14 +123,14 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 {
 	if (!self.touches) return;
 	
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	CGRect screenBounds = UIScreen.mainScreen.bounds;
 	
 	clue_touch_t ourTouch;
 	
 	for (NSUInteger i = 0; i < self.touches.count; ++i)
 	{
 		// Skip empty slots.
-		if (self.touches[i] == [NSNull null]) continue;
+		if (self.touches[i] == NSNull.null) continue;
 		
 		// Skip touches that aren't part of this event.
 		if (![touches containsObject:self.touches[i]]) continue;
@@ -144,14 +144,14 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 {
 	if (!self.touches) return;
 	
-	CGRect screenBounds = [[UIScreen mainScreen] bounds];
+	CGRect screenBounds = UIScreen.mainScreen.bounds;
 	
 	clue_touch_t ourTouch;
 	
 	for (NSUInteger i = 0; i < self.touches.count; ++i)
 	{
 		// Skip empty slots.
-		if (self.touches[i] == [NSNull null]) continue;
+		if (self.touches[i] == NSNull.null) continue;
 		
 		// Skip touches that aren't part of this event.
 		if (![touches containsObject:self.touches[i]]) continue;
@@ -160,7 +160,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 		clue_hook_touch_up(&ourTouch);
 		
 		// Now that this touch is done, remove it from our list.
-		self.touches[i] = [NSNull null];
+		self.touches[i] = NSNull.null;
 	}
 }
 

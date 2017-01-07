@@ -5,13 +5,13 @@
 
 AppDelegate* clue_ios_get_app_delegate(void)
 {
-	return (AppDelegate*)[UIApplication sharedApplication].delegate;
+	return (AppDelegate*)UIApplication.sharedApplication.delegate;
 }
 
 NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 {
 	// https://developer.apple.com/library/content/technotes/tn2406/_index.html
-	return [[[[NSFileManager defaultManager] URLsForDirectory:dir inDomains:NSUserDomainMask] lastObject] path];
+	return [NSFileManager.defaultManager URLsForDirectory:dir inDomains:NSUserDomainMask].lastObject.path;
 }
 
 @implementation AppDelegate
@@ -22,7 +22,7 @@ NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 	
 	if (self)
 	{
-		self.readDir = [[NSBundle mainBundle] resourcePath];
+		self.readDir = NSBundle.mainBundle.resourcePath;
 		
 		// https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
 		self.userWriteDir = clue_ios_get_dir(NSDocumentDirectory);
@@ -35,7 +35,7 @@ NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [[CustomViewController alloc] init];
     [self.window makeKeyAndVisible];
 	
