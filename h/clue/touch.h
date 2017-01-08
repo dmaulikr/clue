@@ -12,6 +12,8 @@ typedef struct clue_touch
 	size_t index;
 	float x;
 	float y;
+	float nx;
+	float ny;
 	float force;
 	float maximumPossibleForce;
 } clue_touch_t;

@@ -11,8 +11,10 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	CGPoint point = [touch locationInView:nil];
 		
 	dest->index = index;
-	dest->x = point.x / screenSize.width;
-	dest->y = point.y / screenSize.height;
+	dest->x = point.x;
+	dest->y = point.y;
+	dest->nx = point.x / screenSize.width;
+	dest->ny = point.y / screenSize.height;
 	dest->force = touch.force;
 	dest->maximumPossibleForce = touch.maximumPossibleForce;
 }
