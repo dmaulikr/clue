@@ -7,9 +7,8 @@ int main(int argc, char* argv[])
 {
 	@autoreleasepool
 	{
-		clue_hook_setup();
+		clue_hook_before_start();
 	    int ret = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-		clue_hook_teardown();
 		return ret;
 	}
 }

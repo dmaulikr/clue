@@ -39,7 +39,7 @@ NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
     self.window.rootViewController = [[CustomViewController alloc] init];
     [self.window makeKeyAndVisible];
 	
-	clue_hook_loaded();
+	clue_hook_start();
 	
 	return YES;
 }
@@ -70,7 +70,7 @@ NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-	CLUE_HOOK_INVOKE(will_terminate);
+	clue_hook_stop();
 }
 
 @end

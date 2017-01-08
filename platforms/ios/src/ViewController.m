@@ -80,7 +80,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
-	clue_ios_hook_memory_warning();
+	CLUE_HOOK_INVOKE(ios_memory_warning);
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
