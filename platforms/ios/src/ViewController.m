@@ -36,6 +36,11 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	return self;
 }
 
+- (void)applyContext
+{
+	[EAGLContext setCurrentContext:self.glContext];
+}
+
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
 	clue_hook_render();
@@ -72,6 +77,8 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	self.glView.multipleTouchEnabled = YES;
 	self.glView.delegate = self;
 	[self.view addSubview:self.glView];
+	
+	[self applyContext];
 	
 	// Set up game loop.
 	CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];

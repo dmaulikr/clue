@@ -20,8 +20,21 @@ NSString* clue_ios_append_slash(NSString* str)
 
 NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 {
+	NSFileManager* fm = NSFileManager.defaultManager;
+	
 	// https://developer.apple.com/library/content/technotes/tn2406/_index.html
-	NSString* path = [NSFileManager.defaultManager URLsForDirectory:dir inDomains:NSUserDomainMask].lastObject.path;
+	NSString* path = [fm URLsForDirectory:dir inDomains:NSUserDomainMask].lastObject.path;
+	
+	if (![fm fileExistsAtPath:path isDirectory:nil])
+	{
+		NSError* error = nil;
+
+		if (![fm createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error])
+		{
+			return nil;
+		}
+	}
+	
 	return clue_ios_append_slash(path);
 }
 

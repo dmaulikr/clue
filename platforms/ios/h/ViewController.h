@@ -9,5 +9,6 @@
 @property (strong, nonatomic) NSMutableArray* touches;
 
 - (id)init;
+- (void)applyContext;
 
 @end
