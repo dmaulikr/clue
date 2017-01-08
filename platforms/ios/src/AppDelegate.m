@@ -8,10 +8,26 @@ AppDelegate* clue_ios_get_app_delegate(void)
 	return (AppDelegate*)UIApplication.sharedApplication.delegate;
 }
 
+NSString* clue_ios_append_slash(NSString* str)
+{
+	if ([str characterAtIndex:str.length - 1] != '/')
+	{
+		return [str stringByAppendingString:@"/"];
+	}
+	
+	return str;
+}
+
 NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 {
 	// https://developer.apple.com/library/content/technotes/tn2406/_index.html
-	return [NSFileManager.defaultManager URLsForDirectory:dir inDomains:NSUserDomainMask].lastObject.path;
+	NSString* path = [NSFileManager.defaultManager URLsForDirectory:dir inDomains:NSUserDomainMask].lastObject.path;
+	return clue_ios_append_slash(path);
+}
+
+NSString* clue_ios_get_read_dir()
+{
+	return clue_ios_append_slash(NSBundle.mainBundle.resourcePath);
 }
 
 @implementation AppDelegate
@@ -22,7 +38,7 @@ NSString* clue_ios_get_dir(NSSearchPathDirectory dir)
 	
 	if (self)
 	{
-		self.readDir = NSBundle.mainBundle.resourcePath;
+		self.readDir = clue_ios_get_read_dir();
 		
 		// https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
 		self.userWriteDir = clue_ios_get_dir(NSDocumentDirectory);
