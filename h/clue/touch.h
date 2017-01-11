@@ -7,7 +7,7 @@
 
 CLUE_BEGIN_C
 
-typedef struct clue_touch
+typedef struct
 {
 	size_t index;
 	float x;
