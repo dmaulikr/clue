@@ -4,6 +4,7 @@
 #import <Foundation/NSURLRequest.h>
 #import <Foundation/NSURLResponse.h>
 #import <Foundation/NSURLSession.h>
+#import <Foundation/NSOperation.h>
 #import <Foundation/NSData.h>
 #import <Foundation/NSDictionary.h>
 #import <Foundation/NSString.h>
@@ -26,8 +27,11 @@ void* clue_request_send(const clue_request_t* req, clue_request_callback_t callb
 		const char* header_begin = req->headers;
 		const char* header_end = NULL;
 		
-		while (header_begin < end && (header_end = strchr(header_begin, '\n')))
+		while (header_begin < end)
 		{
+			header_end = strchr(header_begin, '\n');
+			if (!header_end) header_end = end;
+			
 			const char* header_colon = strchr(header_begin, ':');
 			
 			if (header_colon && header_colon < header_end)
@@ -44,17 +48,21 @@ void* clue_request_send(const clue_request_t* req, clue_request_callback_t callb
 					encoding:NSUTF8StringEncoding
 				];
 				
-				[request
-					addValue:[value stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet]
-					forHTTPHeaderField:[name stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet]
-				];
+				name = [name stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+				value = [value stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
+				
+				[request addValue:value forHTTPHeaderField:name];
 			}
 			
 			header_begin = header_end + 1;
 		}
 	}
 	
-	NSURLSession* session = [[NSURLSession alloc] init];
+	NSURLSession* session = [NSURLSession
+		sessionWithConfiguration:NSURLSessionConfiguration.defaultSessionConfiguration
+		delegate:nil
+		delegateQueue:[NSOperationQueue mainQueue]
+	];
 	
 	NSURLSessionDataTask* task = [session
 		dataTaskWithRequest:request
@@ -63,8 +71,6 @@ void* clue_request_send(const clue_request_t* req, clue_request_callback_t callb
 			
 			clue_response_t resp;
 			clue_response_init(&resp);
-			
-			char* body = NULL;
 			
 			if (error)
 			{
@@ -83,21 +89,17 @@ void* clue_request_send(const clue_request_t* req, clue_request_callback_t callb
 				
 				resp.headers = [[headers componentsJoinedByString:@"\n"] UTF8String];
 				
-				size_t body_size = data ? data.length : 0;
-				if (body_size)
+				if (data && data.length)
 				{
-					body = malloc(body_size + 1);
-					memcpy(body, [data bytes], body_size);
-					body[body_size] = '\0';
-					resp.body = body;
+					resp.body = [data bytes];
+					resp.body_size = data.length;
 				}
 			}
 			
 			callback(&resp, user);
-			
-			if (body) free(body);
 		}
 	];
+	[task resume];
 	
 	return (void*)CFBridgingRetain(task);
 }

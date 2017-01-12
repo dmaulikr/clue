@@ -16,5 +16,6 @@ void clue_response_init(clue_response_t* resp)
 	resp->code = 0;
 	resp->headers = NULL;
 	resp->body = NULL;
+	resp->body_size = 0;
 	resp->error = NULL;
 }

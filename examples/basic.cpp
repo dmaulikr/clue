@@ -11,8 +11,7 @@ CLUE_EXTERN void clue_hook_before_start(void)
 
 CLUE_EXTERN void clue_hook_start(void)
 {
-	CLUE_LOG(DEFAULT, "Application loaded!");
-	CLUE_LOG_ALT(DEFAULT, ("Read dir: %s", clue_get_read_dir()));
+	CLUE_LOG(DEFAULT, "Read dir: %s", clue_get_read_dir());
 	CLUE_LOG(DEFAULT, "User write dir: %s", clue_get_user_write_dir());
 	CLUE_LOG(DEFAULT, "App write dir: %s", clue_get_app_write_dir());
 	CLUE_LOG(DEFAULT, "Temp write dir: %s", clue_get_temp_write_dir());

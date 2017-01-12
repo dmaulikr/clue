@@ -20,7 +20,8 @@ typedef struct
 {
 	uint16_t code;
 	const char* headers;
-	const char* body;
+	const void* body;
+	size_t body_size;
 	const char* error;
 } clue_response_t;
 
