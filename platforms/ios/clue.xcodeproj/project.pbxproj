@@ -16,6 +16,7 @@
 		7F00BAD81E2005AB00EF8942 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BAD71E2005AB00EF8942 /* ViewController.m */; };
 		7F00BEB81E21953A00EF8942 /* screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00BEB71E21953A00EF8942 /* screen.m */; };
 		7F1846971E266F93006309A7 /* request.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1846961E266F93006309A7 /* request.m */; };
+		7F1846991E270FE4006309A7 /* request.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F1846981E270FE4006309A7 /* request.c */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		7F00BEB71E21953A00EF8942 /* screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = screen.m; sourceTree = "<group>"; };
 		7F1846951E266E25006309A7 /* request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = request.h; sourceTree = "<group>"; };
 		7F1846961E266F93006309A7 /* request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = request.m; sourceTree = "<group>"; };
+		7F1846981E270FE4006309A7 /* request.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = request.c; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				7F00BAD41E1FF46700EF8942 /* hook.c */,
+				7F1846981E270FE4006309A7 /* request.c */,
 			);
 			name = "generic-src";
 			path = ../../src;
@@ -224,6 +227,7 @@
 				7F00BAD51E1FF46700EF8942 /* hook.c in Sources */,
 				7F00BAC51E1DD8F300EF8942 /* main.cpp in Sources */,
 				7F00BABD1E1DD77800EF8942 /* AppDelegate.m in Sources */,
+				7F1846991E270FE4006309A7 /* request.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
