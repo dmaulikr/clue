@@ -1,0 +1,25 @@
+{
+  "name": "clue",
+  "version": "1.0.0",
+  "description": "C glue for iOS and Android games written in C/C++.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agopshi/clue.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agopshi/clue/issues"
+  },
+  "homepage": "https://github.com/agopshi/clue#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
