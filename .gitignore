@@ -1,6 +1,6 @@
-# TODO
-
 # iOS
-/platforms/ios/DerivedData/
-*.xcworkspace
+DerivedData/
 xcuserdata/
+*.xcworkspace
+
+# Android
