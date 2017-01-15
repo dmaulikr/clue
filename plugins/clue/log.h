@@ -15,12 +15,12 @@ Support for alternative invocation using nested parenthesis:
 */
 #define CLUE_LOG_ALT(channel, args) CLUE_LOG(channel, CLUE_LOG_CALL(CLUE_LOG_IDENTITY, args))
 
-#define CLUE_LOG(channel, ...) do { if (CLUE_LOG_##channel) {	\
-	size_t size = snprintf(NULL, 0, __VA_ARGS__);				\
-	char* buffer = (char*)malloc(size + 1);						\
-	snprintf(buffer, size + 1, __VA_ARGS__);					\
-	clue_log(#channel, buffer);									\
-	free(buffer);												\
+#define CLUE_LOG(channel, ...) do { if (CLUE_LOG_##channel) {    \
+	size_t clue_log_size_ = snprintf(NULL, 0, __VA_ARGS__);      \
+	char* clue_log_buffer_ = (char*)malloc(clue_log_size_ + 1);  \
+	snprintf(clue_log_buffer_, clue_log_size_ + 1, __VA_ARGS__); \
+	clue_log(#channel, clue_log_buffer_);                        \
+	free(clue_log_buffer_);                                      \
 } } while (false)
 
 #ifndef CLUE_LOG_DEFAULT
