@@ -6,8 +6,9 @@
 void clue_screen_get_size(float* w, float* h)
 {
 	CGRect screenBounds = UIScreen.mainScreen.bounds;
-	if (w) *w = screenBounds.size.width;
-	if (h) *h = screenBounds.size.height;
+	CGFloat screenScale = UIScreen.mainScreen.scale;
+	if (w) *w = screenBounds.size.width * screenScale;
+	if (h) *h = screenBounds.size.height * screenScale;
 }
 
 int clue_screen_get_framebuffer(void)
