@@ -1,6 +1,3 @@
-#import <OpenAl/al.h>
-#import <OpenAl/alc.h>
-
 #include "clue/clue.h"
 
 CLUE_EXTERN void clue_hook_before_start(void)
@@ -9,10 +6,20 @@ CLUE_EXTERN void clue_hook_before_start(void)
 
 CLUE_EXTERN void clue_hook_start(void)
 {
+	clue_sound_start();
+	
+	clue_sound_channel_t channel = clue_sound_channel_create();
+	clue_sound_buffer_t buffer = clue_sound_buffer_create(NULL, 0);
+	
+	clue_sound_channel_set_buffer(channel, buffer);
+	clue_sound_channel_set_loop(channel, true);
+	
+	clue_sound_channel_play(channel);
 }
 
 CLUE_EXTERN void clue_hook_stop(void)
 {
+	clue_sound_stop();
 }
 
 CLUE_EXTERN void clue_hook_update(double deltaTime)

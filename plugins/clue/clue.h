@@ -7,6 +7,7 @@
 #include "clue/log.h"
 #include "clue/request.h"
 #include "clue/screen.h"
+#include "clue/sound.h"
 #include "clue/touch.h"
 
 #endif
