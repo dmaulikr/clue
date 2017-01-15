@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ClueAppDelegate: UIResponder<UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -11,4 +11,4 @@
 
 @end
 
-AppDelegate* clue_ios_get_app_delegate(void);
+ClueAppDelegate* clue_ios_get_app_delegate(void);

@@ -3,9 +3,9 @@
 #import "clue/ios/AppDelegate.h"
 #import "clue/ios/ViewController.h"
 
-AppDelegate* clue_ios_get_app_delegate(void)
+ClueAppDelegate* clue_ios_get_app_delegate(void)
 {
-	return (AppDelegate*)UIApplication.sharedApplication.delegate;
+	return (ClueAppDelegate*)UIApplication.sharedApplication.delegate;
 }
 
 NSString* clue_ios_append_slash(NSString* str)
@@ -43,7 +43,7 @@ NSString* clue_ios_get_read_dir()
 	return clue_ios_append_slash(NSBundle.mainBundle.resourcePath);
 }
 
-@implementation AppDelegate
+@implementation ClueAppDelegate
 
 - (id)init
 {
@@ -65,7 +65,7 @@ NSString* clue_ios_get_read_dir()
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = [[CustomViewController alloc] init];
+    self.window.rootViewController = [[ClueViewController alloc] init];
     [self.window makeKeyAndVisible];
 	
 	clue_hook_start();

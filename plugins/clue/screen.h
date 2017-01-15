@@ -5,7 +5,8 @@
 
 CLUE_BEGIN_C
 
-void clue_get_screen_size(float* w, float* h);
+void clue_screen_get_size(float* w, float* h);
+int clue_screen_get_framebuffer(void);
 
 CLUE_END_C
 

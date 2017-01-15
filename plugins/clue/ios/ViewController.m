@@ -1,6 +1,7 @@
 #include "clue/hook.h"
 #include "clue/touch.h"
 
+#import "clue/ios/AppDelegate.h"
 #import "clue/ios/ViewController.h"
 
 #import <UIKit/UIKit.h>
@@ -19,7 +20,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	dest->maximumPossibleForce = touch.maximumPossibleForce;
 }
 
-@implementation CustomViewController
+@implementation ClueViewController
 {
 	double lastTimestamp;
 }
@@ -79,6 +80,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	[self.view addSubview:self.glView];
 	
 	[self applyContext];
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &_glFramebuffer);
 	
 	// Set up game loop.
 	CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
@@ -176,6 +178,11 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 - (void)touchesCancelled:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
 	[self touchesEnded:touches withEvent:event];
+}
+
+ClueViewController* clue_ios_get_view_controller(void)
+{
+	return (ClueViewController*)clue_ios_get_app_delegate().window.rootViewController;
 }
 
 @end
