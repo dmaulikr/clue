@@ -1,7 +1,7 @@
 #include "clue/hook.h"
 
-#import "AppDelegate.h"
-#import "ViewController.h"
+#import "clue/ios/AppDelegate.h"
+#import "clue/ios/ViewController.h"
 
 AppDelegate* clue_ios_get_app_delegate(void)
 {

@@ -1,6 +1,6 @@
 #include "clue/file.h"
 
-#import "AppDelegate.h"
+#import "clue/ios/AppDelegate.h"
 
 #include <stddef.h>
 

@@ -1,7 +1,7 @@
 #include "clue/hook.h"
 #include "clue/touch.h"
 
-#import "ViewController.h"
+#import "clue/ios/ViewController.h"
 
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
