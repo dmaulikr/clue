@@ -10,9 +10,15 @@ CLUE_BEGIN_C
 
 typedef uint32_t clue_sound_buffer_t;
 typedef uint32_t clue_sound_channel_t;
+typedef uint32_t clue_sound_error_t;
+
+#define CLUE_SOUND_CHANNEL_INVALID ((clue_sound_channel_t)-1)
 
 void clue_sound_start(void);
 void clue_sound_stop(void);
+clue_sound_error_t clue_sound_get_error(void);
+void clue_sound_set_volume(float volume);
+float clue_sound_get_volume(void);
 
 clue_sound_buffer_t clue_sound_buffer_create(void* data, size_t data_size);
 void clue_sound_buffer_destroy(clue_sound_buffer_t buffer);
@@ -27,6 +33,8 @@ void clue_sound_channel_set_buffer(clue_sound_channel_t channel, clue_sound_buff
 
 void clue_sound_channel_play(clue_sound_channel_t channel);
 void clue_sound_channel_stop(clue_sound_channel_t channel);
+void clue_sound_channel_pause(clue_sound_channel_t channel);
+void clue_sound_channel_resume(clue_sound_channel_t channel);
 
 CLUE_END_C
 

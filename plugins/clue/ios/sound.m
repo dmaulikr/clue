@@ -21,6 +21,23 @@ void clue_sound_stop(void)
 	alcCloseDevice(clue_alc_device);
 }
 
+clue_sound_error_t clue_sound_get_error(void)
+{
+	return alGetError();
+}
+
+void clue_sound_set_volume(float volume)
+{
+	alListenerf(AL_GAIN, volume);
+}
+
+float clue_sound_get_volume(void)
+{
+	ALfloat volume;
+	alGetListenerf(AL_GAIN, &volume);
+	return volume;
+}
+
 clue_sound_buffer_t clue_sound_buffer_create(void* data, size_t data_size)
 {
 	clue_sound_buffer_t buffer;
@@ -40,16 +57,22 @@ clue_sound_channel_t clue_sound_channel_create(void)
 {
 	clue_sound_channel_t channel;
 	alGenSources(1, &channel);
+	
+	if (alGetError() != AL_NO_ERROR) return CLUE_SOUND_CHANNEL_INVALID;
+	
 	return channel;
 }
 
 void clue_sound_channel_destroy(clue_sound_channel_t channel)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
 	alDeleteSources(1, &channel);
 }
 
 bool clue_sound_channel_is_playing(clue_sound_channel_t channel)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return false;
+	
 	ALint state;
 	alGetSourcei(channel, AL_SOURCE_STATE, &state);
 	return state == AL_PLAYING;
@@ -57,25 +80,44 @@ bool clue_sound_channel_is_playing(clue_sound_channel_t channel)
 
 void clue_sound_channel_set_loop(clue_sound_channel_t channel, bool loop)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
 	alSourcei(channel, AL_LOOPING, loop ? 1 : 0);
 }
 
 void clue_sound_channel_set_volume(clue_sound_channel_t channel, float volume)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
 	alSourcef(channel, AL_GAIN, volume);
 }
 
 void clue_sound_channel_set_buffer(clue_sound_channel_t channel, clue_sound_buffer_t buffer)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
 	alSourcei(channel, AL_BUFFER, buffer);
 }
 
 void clue_sound_channel_play(clue_sound_channel_t channel)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
+	alSourceStop(channel);
+	alSourceRewind(channel);
 	alSourcePlay(channel);
 }
 
 void clue_sound_channel_stop(clue_sound_channel_t channel)
 {
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
 	alSourceStop(channel);
+}
+
+void clue_sound_channel_pause(clue_sound_channel_t channel)
+{
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
+	alSourcePause(channel);
+}
+
+void clue_sound_channel_resume(clue_sound_channel_t channel)
+{
+	if (channel == CLUE_SOUND_CHANNEL_INVALID) return;
+	alSourcePlay(channel);
 }
