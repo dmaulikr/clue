@@ -2,7 +2,7 @@ node_modules/
 
 # iOS
 DerivedData/
-xcuserdata/
-*.xcworkspace
+project.xcworkspace/
+xcdebugger/
 
 # Android
