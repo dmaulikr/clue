@@ -4,6 +4,7 @@
 #include "clue/internal.h"
 
 #include <stdlib.h>
+#include <stdbool.h>
 
 CLUE_BEGIN_C
 

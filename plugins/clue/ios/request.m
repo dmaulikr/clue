@@ -1,6 +1,7 @@
 #include "clue/request.h"
 
 #import <Foundation/NSURL.h>
+#import <Foundation/NSURLError.h>
 #import <Foundation/NSURLRequest.h>
 #import <Foundation/NSURLResponse.h>
 #import <Foundation/NSURLSession.h>
@@ -74,6 +75,10 @@ void* clue_request_send(const clue_request_t* req, clue_request_callback_t callb
 			
 			if (error)
 			{
+				// Since clue_request_cancel() releases the task reference, we don't want to
+				// invoke the user callback, which might call clue_request_release().
+				if (error.code == NSURLErrorCancelled) return;
+
 				resp.error = [[NSString stringWithFormat:@"%@", error] UTF8String];
 			}
 			else
@@ -108,6 +113,9 @@ void clue_request_cancel(void* handle)
 {
 	if (!handle) return;
 	
+	// It's very important that we release the reference here instead of waiting for the user
+	// to release it from inside the completion callback. Once the user cancels, we can't
+	// guarantee that the user data pointer will be valid when the callback is invoked.
 	NSURLSessionDataTask* task = (NSURLSessionDataTask*)CFBridgingRelease(handle);
 	[task cancel];
 }
