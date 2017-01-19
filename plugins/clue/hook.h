@@ -14,12 +14,14 @@ void clue_hook_update(double deltaTime);
 void clue_hook_render(void);
 
 typedef void (*clue_hook_t)(void);
+typedef void (*clue_hook_str_t)(const char*);
 
 /* Optional hooks. If desired, assign during clue_hook_setup(). */
 extern clue_hook_t clue_hook_will_become_inactive;
 extern clue_hook_t clue_hook_did_become_inactive;
 extern clue_hook_t clue_hook_will_become_active;
 extern clue_hook_t clue_hook_did_become_active;
+extern clue_hook_str_t clue_hook_universal_link;
 
 /* iOS-specific hooks. */
 extern clue_hook_t clue_hook_ios_memory_warning;

@@ -73,6 +73,18 @@ NSString* clue_ios_get_read_dir()
 	return YES;
 }
 
+- (BOOL)application:(UIApplication*)application
+	continueUserActivity:(NSUserActivity*)userActivity
+	restorationHandler:(void(^)(NSArray* restorableObjects))restorationHandler
+{
+	if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb])
+	{
+		NSString* url = userActivity.webpageURL.absoluteString;
+		CLUE_HOOK_INVOKE(universal_link, url.UTF8String);
+	}
+	return YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 	CLUE_HOOK_INVOKE(will_become_inactive);

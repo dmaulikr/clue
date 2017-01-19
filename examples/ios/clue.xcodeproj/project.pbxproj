@@ -17,8 +17,8 @@
 		7F1849CC1E2BD9A0006309A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1849BF1E2BD9A0006309A7 /* ViewController.m */; };
 		7F1849CD1E2BD9A0006309A7 /* request.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F1849C11E2BD9A0006309A7 /* request.c */; };
 		7F184A141E2C1B65006309A7 /* sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A131E2C1B65006309A7 /* sound.m */; };
-		7F184A151E2C219E006309A7 /* sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F1848431E2BD96A006309A7 /* sound.cpp */; };
 		7F184A171E2C22B0006309A7 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 7F184A161E2C22B0006309A7 /* data */; };
+		7F184A201E30F4BF006309A7 /* basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F1846A21E2BD96A006309A7 /* basic.cpp */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -220,9 +220,9 @@
 				7F1849CB1E2BD9A0006309A7 /* screen.m in Sources */,
 				7F184A141E2C1B65006309A7 /* sound.m in Sources */,
 				7F1849CA1E2BD9A0006309A7 /* request.m in Sources */,
-				7F184A151E2C219E006309A7 /* sound.cpp in Sources */,
 				7F1849C91E2BD9A0006309A7 /* main.m in Sources */,
 				7F1849C61E2BD9A0006309A7 /* AppDelegate.m in Sources */,
+				7F184A201E30F4BF006309A7 /* basic.cpp in Sources */,
 				7F1849CD1E2BD9A0006309A7 /* request.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
