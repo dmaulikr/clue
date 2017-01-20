@@ -4,16 +4,22 @@
 
 namespace
 {
-	bool share_complete = true;
-	void share_complete_callback()
+	const char* alert_buttons[3] = { "Foo", "Bar", "OK" };
+	size_t alert_buttons_size = 3;
+	
+	void alert_button_callback(size_t index, void* user)
 	{
-		share_complete = true;
+		CLUE_LOG(DEFAULT, "Pressed button: %s", alert_buttons[index]);
+	}
+	
+	void alert_complete_callback(void* user)
+	{
+		CLUE_LOG(DEFAULT, "Alert complete!");
 	}
 }
 
 CLUE_EXTERN void clue_hook_before_start(void)
 {
-	CLUE_HOOK_DEFINE(share_complete, share_complete_callback);
 }
 
 CLUE_EXTERN void clue_hook_start(void)
@@ -44,9 +50,8 @@ CLUE_EXTERN void clue_hook_touch_move(const clue_touch_t* touch)
 
 CLUE_EXTERN void clue_hook_touch_up(const clue_touch_t* touch)
 {
-	if (share_complete)
-	{
-		share_complete = false;
-		clue_share("Example text.", "https://example.com", touch->nx, touch->ny);
-	}
+	char* message = NULL;
+	CLUE_LOG_PRINTF(message, "(%f, %f)", touch->nx, touch->ny);
+	clue_alert("Touch Up", message, alert_buttons, alert_buttons_size, alert_button_callback, alert_complete_callback, NULL);
+	free(message);
 }

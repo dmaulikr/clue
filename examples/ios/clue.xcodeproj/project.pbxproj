@@ -19,7 +19,6 @@
 		7F184A141E2C1B65006309A7 /* sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A131E2C1B65006309A7 /* sound.m */; };
 		7F184A171E2C22B0006309A7 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 7F184A161E2C22B0006309A7 /* data */; };
 		7F184A241E3199E0006309A7 /* share.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A231E3199E0006309A7 /* share.m */; };
-		7F184A261E319BB5006309A7 /* share.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A251E319BB5006309A7 /* share.cpp */; };
 		7F184A2D1E324C22006309A7 /* alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A2C1E324C22006309A7 /* alert.m */; };
 		7F184A2F1E324D95006309A7 /* alert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A2E1E324D95006309A7 /* alert.cpp */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
@@ -233,7 +232,6 @@
 				7F1849C71E2BD9A0006309A7 /* file.m in Sources */,
 				7F1849C81E2BD9A0006309A7 /* log.m in Sources */,
 				7F184A2F1E324D95006309A7 /* alert.cpp in Sources */,
-				7F184A261E319BB5006309A7 /* share.cpp in Sources */,
 				7F1849CB1E2BD9A0006309A7 /* screen.m in Sources */,
 				7F184A2D1E324C22006309A7 /* alert.m in Sources */,
 				7F184A141E2C1B65006309A7 /* sound.m in Sources */,
