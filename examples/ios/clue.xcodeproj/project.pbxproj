@@ -20,6 +20,8 @@
 		7F184A171E2C22B0006309A7 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 7F184A161E2C22B0006309A7 /* data */; };
 		7F184A241E3199E0006309A7 /* share.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A231E3199E0006309A7 /* share.m */; };
 		7F184A261E319BB5006309A7 /* share.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A251E319BB5006309A7 /* share.cpp */; };
+		7F184A2D1E324C22006309A7 /* alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A2C1E324C22006309A7 /* alert.m */; };
+		7F184A2F1E324D95006309A7 /* alert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A2E1E324D95006309A7 /* alert.cpp */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,9 @@
 		7F184A221E31998C006309A7 /* share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = share.h; sourceTree = "<group>"; };
 		7F184A231E3199E0006309A7 /* share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = share.m; sourceTree = "<group>"; };
 		7F184A251E319BB5006309A7 /* share.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = share.cpp; sourceTree = "<group>"; };
+		7F184A2B1E324C12006309A7 /* alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alert.h; sourceTree = "<group>"; };
+		7F184A2C1E324C22006309A7 /* alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alert.m; sourceTree = "<group>"; };
+		7F184A2E1E324D95006309A7 /* alert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alert.cpp; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 				7F1848421E2BD96A006309A7 /* request.cpp */,
 				7F1848431E2BD96A006309A7 /* sound.cpp */,
 				7F184A251E319BB5006309A7 /* share.cpp */,
+				7F184A2E1E324D95006309A7 /* alert.cpp */,
 			);
 			name = examples;
 			path = ..;
@@ -107,6 +113,7 @@
 				7F1849C41E2BD9A0006309A7 /* touch.h */,
 				7F184A121E2C1AA4006309A7 /* sound.h */,
 				7F184A221E31998C006309A7 /* share.h */,
+				7F184A2B1E324C12006309A7 /* alert.h */,
 			);
 			path = clue;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 				7F1849BF1E2BD9A0006309A7 /* ViewController.m */,
 				7F184A131E2C1B65006309A7 /* sound.m */,
 				7F184A231E3199E0006309A7 /* share.m */,
+				7F184A2C1E324C22006309A7 /* alert.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -224,8 +232,10 @@
 				7F1849C51E2BD9A0006309A7 /* hook.c in Sources */,
 				7F1849C71E2BD9A0006309A7 /* file.m in Sources */,
 				7F1849C81E2BD9A0006309A7 /* log.m in Sources */,
+				7F184A2F1E324D95006309A7 /* alert.cpp in Sources */,
 				7F184A261E319BB5006309A7 /* share.cpp in Sources */,
 				7F1849CB1E2BD9A0006309A7 /* screen.m in Sources */,
+				7F184A2D1E324C22006309A7 /* alert.m in Sources */,
 				7F184A141E2C1B65006309A7 /* sound.m in Sources */,
 				7F1849CA1E2BD9A0006309A7 /* request.m in Sources */,
 				7F1849C91E2BD9A0006309A7 /* main.m in Sources */,
