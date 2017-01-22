@@ -1,8 +1,12 @@
 node_modules/
 
+# Symbolic links used for development and testing.
+plugins/clue-flurry
+
 # iOS
 DerivedData/
-project.xcworkspace/
+xcuserdata/
 xcdebugger/
+Pods/
 
 # Android
