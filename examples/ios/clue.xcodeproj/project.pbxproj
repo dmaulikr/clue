@@ -23,6 +23,7 @@
 		7F184A2F1E324D95006309A7 /* alert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A2E1E324D95006309A7 /* alert.cpp */; };
 		7F184A351E342179006309A7 /* exec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A341E342179006309A7 /* exec.m */; };
 		7F184A871E354E79006309A7 /* flurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F184A861E354E79006309A7 /* flurry.m */; };
+		7F482EE51E381AE6004CDF7F /* version.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F482EE41E381AE6004CDF7F /* version.m */; };
 		7F6202A71E19E6C400A62391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6202A61E19E6C400A62391 /* Assets.xcassets */; };
 		B6C960883E8BD8A6B42C81CF /* libPods-clue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 047BF84CA2BC279ECFB32DDD /* libPods-clue.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,8 @@
 		7F184A341E342179006309A7 /* exec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exec.m; sourceTree = "<group>"; };
 		7F184A841E354D5E006309A7 /* flurry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = flurry.h; sourceTree = "<group>"; };
 		7F184A861E354E79006309A7 /* flurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flurry.m; sourceTree = "<group>"; };
+		7F482EE31E381AA2004CDF7F /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		7F482EE41E381AE6004CDF7F /* version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = version.m; sourceTree = "<group>"; };
 		7F6202931E19E6C300A62391 /* clue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6202A61E19E6C400A62391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F6202AB1E19E6C400A62391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 				7F184A221E31998C006309A7 /* share.h */,
 				7F184A2B1E324C12006309A7 /* alert.h */,
 				7F184A331E341BA1006309A7 /* exec.h */,
+				7F482EE31E381AA2004CDF7F /* version.h */,
 			);
 			path = clue;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 				7F184A231E3199E0006309A7 /* share.m */,
 				7F184A2C1E324C22006309A7 /* alert.m */,
 				7F184A341E342179006309A7 /* exec.m */,
+				7F482EE41E381AE6004CDF7F /* version.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				7F184A2D1E324C22006309A7 /* alert.m in Sources */,
 				7F184A141E2C1B65006309A7 /* sound.m in Sources */,
 				7F1849CA1E2BD9A0006309A7 /* request.m in Sources */,
+				7F482EE51E381AE6004CDF7F /* version.m in Sources */,
 				7F1849C91E2BD9A0006309A7 /* main.m in Sources */,
 				7F1849C61E2BD9A0006309A7 /* AppDelegate.m in Sources */,
 				7F184A871E354E79006309A7 /* flurry.m in Sources */,
