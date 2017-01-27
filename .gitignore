@@ -10,3 +10,9 @@ xcdebugger/
 Pods/
 
 # Android
+*.iml
+.gradle/
+.externalNativeBuild/
+.idea/
+build/
+local.properties
