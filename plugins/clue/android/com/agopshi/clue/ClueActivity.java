@@ -2,19 +2,14 @@ package com.agopshi.clue;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.WindowManager;
 
-import java.io.File;
+public class ClueActivity extends Activity {
 
-
-public class GL2JNIActivity extends Activity {
-
-    GL2JNIView mView;
+    ClueView mView;
 
     @Override protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        mView = new GL2JNIView(getApplication());
+        mView = new ClueView(getApplication());
 		setContentView(mView);
     }
 

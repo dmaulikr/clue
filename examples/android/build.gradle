@@ -18,7 +18,7 @@ allprojects {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId 'com.agopshi.clue'
         minSdkVersion 15
@@ -28,6 +28,8 @@ android {
         }
         externalNativeBuild {
             cmake {
+                cFlags "-Wall -I${file('../../plugins/')}"
+                cppFlags "-std=c++11 -frtti -fexceptions -Wall -I${file('../../plugins/')}"
             }
         }
     }
@@ -49,8 +51,8 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs += '../../plugins/clue/android'
-            res.srcDirs += 'res'
+            java.srcDirs = ['../../plugins/clue/android']
+            res.srcDirs = ['res']
         }
     }
 }

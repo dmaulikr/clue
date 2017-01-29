@@ -1,9 +1,8 @@
 package com.agopshi.clue;
 
-public class GL2JNILib {
-
+public class ClueLib {
      static {
-         System.loadLibrary("gl2jni");
+         System.loadLibrary("clue");
      }
 
     /**
