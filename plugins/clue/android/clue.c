@@ -6,7 +6,6 @@
 
 JNIEXPORT void JNICALL Java_com_agopshi_clue_ClueLib_init(JNIEnv* env, jobject obj, jint width, jint height)
 {
-	glViewport(0, 0, width, height);
 	clue_hook_before_start();
 	clue_hook_start();
 }
