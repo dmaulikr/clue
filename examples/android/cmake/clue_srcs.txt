@@ -1,0 +1,19 @@
+set(CLUE_SRCS ../../plugins/clue/alert.h
+../../plugins/clue/android/clue.c
+../../plugins/clue/android/file.c
+../../plugins/clue/android/log.c
+../../plugins/clue/clue.h
+../../plugins/clue/exec.h
+../../plugins/clue/file.h
+../../plugins/clue/gles.h
+../../plugins/clue/hook.c
+../../plugins/clue/hook.h
+../../plugins/clue/internal.h
+../../plugins/clue/log.h
+../../plugins/clue/request.c
+../../plugins/clue/request.h
+../../plugins/clue/screen.h
+../../plugins/clue/share.h
+../../plugins/clue/sound.h
+../../plugins/clue/touch.h
+../../plugins/clue/version.h)
