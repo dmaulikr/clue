@@ -74,7 +74,7 @@ class ClueView extends GLSurfaceView {
 				EGL10.EGL_NONE
 			};
 
-			int[] numConfigs;
+			int[] numConfigs = new int[1];
 			EGLConfig[] configs = new EGLConfig[1];
 			egl.eglChooseConfig(display, configAttribs, configs, 1, numConfigs);
 
@@ -82,7 +82,7 @@ class ClueView extends GLSurfaceView {
 				throw new Exception("No configs match configSpec");
 			}
 
-			return chooseConfig(egl, display, configs);
+			return configs[0];
 		}
 
 		// Subclasses can adjust these values:
