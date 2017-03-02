@@ -13,7 +13,7 @@ typedef void (*clue_alert_complete_callback_t)(void* user);
 void clue_alert(
 	const char* title,
 	const char* message,
-	const char** buttons,
+	const char* const buttons[],
 	size_t buttons_size,
 	clue_alert_button_callback_t button_callback,
 	clue_alert_complete_callback_t complete_callback,
