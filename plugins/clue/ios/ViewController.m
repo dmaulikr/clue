@@ -13,7 +13,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 		
 	dest->index = index;
 	
-	// Regular position is in pixels, not logical units.
+	// Regular position is in pixels, not logical units. Note that screenScale should be provided via nativeScale, not scale. This matches what is returned by clue_screen_get_size().
 	dest->x = point.x * screenScale;
 	dest->y = point.y * screenScale;
 	
@@ -105,7 +105,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	if (!self.touches) self.touches = [[NSMutableArray alloc] init];
 	
 	CGRect screenBounds = UIScreen.mainScreen.bounds;
-	CGFloat screenScale = UIScreen.mainScreen.scale;
+	CGFloat screenScale = UIScreen.mainScreen.nativeScale;
 	
 	clue_touch_t ourTouch;
 	
@@ -142,7 +142,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	if (!self.touches) return;
 	
 	CGRect screenBounds = UIScreen.mainScreen.bounds;
-	CGFloat screenScale = UIScreen.mainScreen.scale;
+	CGFloat screenScale = UIScreen.mainScreen.nativeScale;
 	
 	clue_touch_t ourTouch;
 	
@@ -164,7 +164,7 @@ void clue_ios_init_touch(clue_touch_t* dest, NSUInteger index, UITouch* touch, C
 	if (!self.touches) return;
 	
 	CGRect screenBounds = UIScreen.mainScreen.bounds;
-	CGFloat screenScale = UIScreen.mainScreen.scale;
+	CGFloat screenScale = UIScreen.mainScreen.nativeScale;
 	
 	clue_touch_t ourTouch;
 	
