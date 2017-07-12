@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D481ADE9C59F5B3757B46E621C46E5F9259F4510",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D481ADE9C59F5B3757B46E621C46E5F9259F4510" : 9223372036854775807,
+    "FDBC6A3E4A709ABD84F3FEE19B208115A0EE557A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "44A8E22C-087E-4453-BAC4-B3CE47510CC0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D481ADE9C59F5B3757B46E621C46E5F9259F4510" : "clue\/",
+    "FDBC6A3E4A709ABD84F3FEE19B208115A0EE557A" : "clue-flurry\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "clue",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "examples\/ios\/clue.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:agopshi\/clue.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D481ADE9C59F5B3757B46E621C46E5F9259F4510"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:agopshi\/clue-flurry.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FDBC6A3E4A709ABD84F3FEE19B208115A0EE557A"
+    }
+  ]
+}
